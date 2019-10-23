@@ -2,7 +2,7 @@
 import requests
 import time
 import sys
-from newspaper import Article
+from newspaper import Article, ArticleException
 
 print('running downloader...')
 
@@ -35,22 +35,17 @@ for year in range(2019, 1919, -1):
 
                 article_url = doc['web_url']
                 passed = False
-                bottomless = 0
-                while not passed :
-                    try :
-                        article = Article(article_url)
-                        article.download()
-                        article.parse()
-                        passed = True
-                    except article.ArticleException :
-                        bottemless += 1
-                        if bottomless > 50 :
-                            sys.exit(1)
-                        pass
+                try :
+                    article = Article(article_url)
+                    article.download()
+                    article.parse()
+                    passed = True
+                except ArticleException :
+                    pass
 
                 # BUG: the same article is being printed every time?
                 locked_text = 'TimesMachine is an exclusive benefit for home delivery and digital subscribers.'
-                if locked_text not in article.text[:100]:  # article is textual
+                if locked_text not in article.text[:100] and passed :  # article is textual
                     # file name is unique ID only
                     filename = str(file_id) + '.data'
 
