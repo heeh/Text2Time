@@ -12,6 +12,7 @@ api_key = 'A6vW3SGfzFTfLTAYG43inWPchbnQIKdm'
 # meta data initialize
 meta_file = open('meta.data', 'w+')
 file_id = 0
+monthly_cap = 250
 
 # url to grab all articles from January 2019 (2019/1)
 # iterate over all possible dates (1851-2019) (1-12)
@@ -54,6 +55,7 @@ for year in range(2019, 1919, -1):
                     f = open(filename, 'w+')
                     try:
                         f.write(article.text)
+                        month_count += 1
                     except UnicodeEncodeError:
                         # we'll just skip over unicode errors for now
                         pass
@@ -70,10 +72,10 @@ for year in range(2019, 1919, -1):
 
                     file_id += 1  # increment file id
 
-            # only grab 500 articles from each month to cut down on time for now
-            month_count += 1
-            if month_count > 500 :
-                break
+                # monthly cap
+                if month_count > monthly_cap :
+                    print('monthly cap hit. done with month number ',month)
+                    break
 
         except KeyError :
             pass
