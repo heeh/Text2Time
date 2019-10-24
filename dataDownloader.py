@@ -18,6 +18,7 @@ file_id = 0
 # 1851 changed to 1852 to fix requests error
 for year in range(2019, 1919, -1):
     for month in range(1, 13, 1):
+        month_count = 0
         # req_url
         req_url = 'https://api.nytimes.com/svc/archive/v1/' + str(year) + '/' + str(month) + '.json?api-key=' + api_key
 
@@ -28,7 +29,7 @@ for year in range(2019, 1919, -1):
 
         # catch 'response not found' - not sure what causes this yet
         try :
-            # req['response']['docs'] is a list of docs (json objects)
+            # req['response']['docs'] is a list of dictionaries
             # iterate over all docs
             # we need to grab the doc date and text
             for doc in req['response']['docs']:
@@ -69,7 +70,12 @@ for year in range(2019, 1919, -1):
 
                     file_id += 1  # increment file id
 
-        except KeyError:
+            # only grab 500 articles from each month to cut down on time for now
+            month_count += 1
+            if month_count > 500 :
+                break
+
+        except KeyError :
             pass
             #print('response not found.')
     print('done with year ', year)
