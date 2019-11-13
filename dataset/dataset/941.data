@@ -1,0 +1,23 @@
+Twitter announced late Friday that it had been breached and that data for 250,000 Twitter users was vulnerable.
+
+The company said in a blog post that it detected unusual access patterns earlier this week and found that user information — usernames, e-mail addresses and encrypted passwords — for 250,000 users may have been accessed in what it described as a “sophisticated attack.”
+
+“This attack was not the work of amateurs, and we do not believe it was an isolated incident,” Bob Lord, Twitter’s director of information security, said in a blog post. “The attackers were extremely sophisticated, and we believe other companies and organizations have also been recently similarly attacked.”
+
+Jim Prosser, a spokesman for Twitter, would not say how hackers were able to infiltrate Twitter’s systems, but Twitter’s blog post alluded that hackers had broken in through a well-publicized vulnerability in Oracle’s Java software.
+
+Java, a widely used programming language, is installed on more than three billion devices and has long been dogged by security problems. Last month, after a security researcher exposed a serious vulnerability in the software, the Department of Homeland Security issued a rare alert that warned users to disable Java on their computers. The vulnerability was particularly disconcerting because it let attackers download a malicious program onto its victims’ machines without any prompting. Users did not even have to click on a malicious link for their computers to be infected. The program simply downloaded itself.
+
+Oracle patched the security hole, but Homeland Security said that the fix was not sufficient.
+
+“Unless it is absolutely necessary to run Java in Web browsers, disable it,” the agency said in an updated alert. “This will help mitigate other Java vulnerabilities that may be discovered in the future.”
+
+“We also echo the advisory from the U.S. Department of Homeland Security and security experts to encourage users to disable Java on their computers,” Mr. Lord said in the blog post.
+
+Apple no longer ships its machines with Java enabled by default and disabled the software remotely on Macs machines where it had already been installed. Those who do not own Macs can disable the software using detailed instructions on Oracle’s Java Web site.
+
+Mr. Prosser said Twitter was working with government and federal law enforcement to track down the source of the attacks. For now, he said the company had reset passwords for, and notified, every compromised user. The company encouraged users to practice good password hygiene, which typically means coming up with different passwords for different sites, and using long passwords that cannot be found in the dictionary.
+
+Twitter did say it “hashed” passwords — which involves mashing up users’ passwords with a mathematical algorithm — and “salted” them, meaning it appended random digits to the end of each hashed password to make it more difficult, but not impossible, for hackers to crack.
+
+Once cracked, passwords can be valuable on auctionlike black market sites where a single password can fetch $20.
