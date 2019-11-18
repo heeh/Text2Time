@@ -28,8 +28,8 @@ shuffle(t_list)
 
 # split
 train_t = t_list[:int(len(t_list) * 0.8)]
-test_t = t_list[int(len(t_list) * 8):]
-
+test_t = t_list[int(len(t_list) * 0.8):]
+6
 # write
 train_f = open('C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/train.tsv', 'w+', encoding='utf8')
 for line in train_t:
