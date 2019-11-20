@@ -1,0 +1,19 @@
+If you do not want to invest in the extra hardware, you can download selected Web pages to your Palm each time you synchronize it with a Web-connected desktop computer using the free AvantGo program. AvantGo, which can be downloaded at www.avantgo.com, has fresh offerings daily from popular news and information sites.
+
+Q. What are the new Web site domain names and when will they be available?
+
+A. There are seven new domains, chosen late last year by the Internet Corporation for Assigned Names and Numbers and expected to start becoming available this year. They include .name for personal Web sites, .aero for airline-related groups, .museum for museums, .coop for business cooperatives and .pro for professionals. For general use, .info and .biz are available to complement the existing .com, .org and .net domains that are typically part of commercial Web addresses.
+
+Web addresses using the domain .tv are also for sale to the public. The tiny island nation of Tuvalu sold the rights to its official suffix for $50 million to a Canadian entrepreneur in 1998. One place to get your .tv is at www.networksolutions.com.
+
+Q. How does one unpartition a hard drive?
+
+A. If you decide that you would like to rearrange your hard drive into different-size partitions -- or want to do away with the partitions dividing up the space all together -- one sure way to undo the partitions is to start from scratch. You should copy all of your files that are on the existing partitions onto an external drive, reformat the drive and then reinstall Windows or the Macintosh OS, your programs and all of your files on the machine.
+
+The most recent version of the utility program PartitionMagic by the PowerQuest Corporation also claims to let users automatically create, merge, move, split, resize, delete and undelete hard drive partitions without destroying files. PartitionMagic 6.0, which was released in November 2000, works with the newer versions of Microsoft's operating system (Windows 2000 Professional and Windows Me) as well as Windows 95 and 98. The program also includes a DriveMapper feature that will update drive-letter references as you add or delete partitions. PartitionMagic 6.0 sells for about $69.95 and you can find more information about it at www.powerquest .com/partitionmagic.
+
+Q. I got the error message ''Word could not fire event'' in Microsoft Word. Can you tell me what this means?
+
+A. That particular error message can pop up when you try to run a macro program -- a small application that you can set up to perform basic or repeated tasks -- in Word or start up the Visual Basic Editor. Microsoft cites several possible causes for the message, including low memory or insufficient hard drive space on your computer. (Try quitting any programs you are not currently using to free up more available RAM and deleting unneeded files from your hard drive to increase your disk space.)
+
+Other possible causes for the error message include a corrupt default global template file in Word or a damaged or incorrect version of the system's Vbe6.dll file. You can find information on how to repair the files in Microsoft's Knowledge Base by searching for article number Q212669 at search.support.microsoft .com/kb. J. D. BIERSDORFER
