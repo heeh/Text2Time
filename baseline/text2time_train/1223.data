@@ -1,0 +1,87 @@
+Me, Myself and Math, a six-part series by Steven Strogatz, looks at us through the lens of math.
+
+By an amazing coincidence my sister, Cathy, and my Aunt Vere have the same birthday: April 4.
+
+Actually, it’s not so amazing. In any extended family with enough siblings, aunts, uncles and cousins, you’d expect at least one such birthday coincidence. Certainly, if there are 366 people in the family — more relatives than days of the year — they can’t all have different birthdays, so a match is guaranteed in a family this big. (Or if you’re worried about leap year, make it 367.)
+
+But suppose we don’t insist on absolute certainty. A classic puzzle called the “birthday problem” asks: How many people would be enough to make the odds of a match at least 50-50?
+
+The answer, just 23 people, comes as a shock to most of us the first time we hear it. Partly that’s because it’s so much less than 366. But it’s also because we tend to mistake the question for one about ourselves. My birthday.
+
+John Allen Paulos gave a vivid example of this error in his trenchant best seller “Innumeracy”:
+
+A couple of years ago, someone on the Johnny Carson show was trying to explain [why 23 is the answer to the birthday problem]. Johnny Carson didn’t believe it, noted that there were about 120 people in the studio audience, and asked how many of them shared his birthday of, say, March 19. No one did, and the guest, who wasn’t a mathematician, said something incomprehensible in his defense.
+
+For years I’ve been dying to see a clip of that scene. It’s become legendary, an iconic moment in mathematical pop culture. Yet I couldn’t find it on YouTube, and none of my colleagues, including Paulos, could remember when it occurred or who the humiliated guest was. Memories have understandably faded over the years.
+
+But fortunately, as of 2010 every surviving tape of “The Tonight Show With Johnny Carson” has been digitized and made publicly available. Thanks to the Carson archives and some ace detective work by a researcher at The Times, we can now watch what really happened when Johnny met the birthday problem. The encounter offers lessons not just about math but about memory as well.
+
+
+
+Before we get to the clip, you may be wondering why the birthday problem is worth studying. For one thing, it highlights how wrong our intuition can be about coincidences, and how easily we underestimate the power of chance — a cautionary lesson for anyone working in sports, finance or any other field where fluky things happen a lot.
+
+Second, the reasoning used to solve the birthday problem is transferable. Medical statisticians use it to estimate the likelihood of finding matches within pools of potential transplant donors and recipients on such characteristics as blood type, Rh factors and other immunological markers. Criminologists use it to calculate how many partial matches between DNA profiles they should expect to find — by chance alone — when trawling databases of convicted offenders. Cryptographers use it to analyze malicious “birthday attacks” that adversaries can deploy to subvert digital signatures.
+
+To work our way toward solving the birthday problem, let’s first simplify it by assuming there are 365 days in the year, and that all birthdays are independent and equally likely. Under these assumptions, we want to figure out how many people we need for the odds to be better than 50-50 that at least two of them have the same birthday.
+
+The solution relies on a single principle, used over and over. I’ll call it the combination principle, but it’s just common sense. Anyone who gets dressed in the morning knows it.
+
+Suppose you have 3 pairs of pants and 5 shirts. (I realize you probably have more than this, but pretend you’re a math professor.) How many different outfits can you create? (And don’t worry if some of the shirts and pants don’t go too well together — remember, you’re a math professor!) Say you decide to wear your ratty blue jeans. Then with five shirts to choose from, that gives you 5 outfits right there. Or you could wear those nice polyester khakis you still have from your high school graduation. Combine them with any of the five shirts and that’s another 5 outfits. Finally, you could go casual and wear your Star Trek sweat pants along with any of the five shirts, creating 5 more outfits and bringing the total to 3 times 5, or 15, outfits in all.
+
+That’s the combination principle in action: If you can make M choices of one thing (like 3 pairs of pants) and N choices of another (like 5 shirts), you can make M x N combinations of them both (15 outfits). The principle also extends to more than two things. If you want to top off your outfit with a stylish hat and you have 6 to choose from, you can create 3 x 5 x 6 = 90 ensembles of pants, shirts and hats.
+
+Next, let’s apply this principle to a warm-up birthday problem featuring the first three United States presidents. Relative to the New Style (Gregorian) calendar, George Washington was born on Feb. 22, John Adams on Oct. 30, and Thomas Jefferson on April 13. Unsurprisingly, no matches. To figure out the odds of this happening by chance, we imagine alternate realities — all the possible combinations of birthdays that could have occurred — and then calculate what fraction of those combinations involve three distinct birthdays.
+
+According to the combination principle, there are 365 x 365 x 365 combinations of three birthdays, since any day of the year is possible for each of the three presidents. To count how many of these combinations contain no matches, let Washington go first. He has all 365 days at his disposal. But once his birthday is fixed, he leaves Adams with only 364 choices to avoid a match, which in turn leaves Jefferson only 363. So, by the combination principle, there are 365 x 364 x 363 nonmatching combinations of three birthdays, out of a total of 365 x 365 x 365 combinations altogether.
+
+Hence the probability that all three birthdays differ is the ratio of these huge numbers:
+
+which is about 0.9918 or 99.18 percent. In other words, it was almost a sure thing that none of the birthdays would match, as we’d expect by common sense.
+
+To extend this result to four or more people, look again at the fraction above and savor the patterns in it. For three people the fraction has three descending numbers — 365, 364, 363 — in the numerator, and three copies of 365 in the denominator. So for four people, the natural and correct guess is that the answer becomes
+
+This expression is merely the fraction we found earlier for three people, multiplied by 362/365. Doing the arithmetic then gives 0.9836, or a 98.36 percent chance that four random people have four different birthdays. That means the probability that two or more of them share a birthday is about 1 – 0.9836 = 0.0164, or 1.64 percent.
+
+Continuing in this way, ideally with the help of a spreadsheet, computer or online birthday problem calculator, we can crank out the corresponding probabilities for any number of people. The calculations show that the odds of a match rise sharply as the group gets larger. With 10 people, the odds are almost 12 percent; with 20 people, 41 percent. When we reach the magic number of 23 people, the odds climb above 50 percent for the first time, which is what we were trying to prove.
+
+Intuitively, how can 23 people be enough? It’s because of all the combinations they create, all the opportunities for luck to strike. With 23 people, there are 253 possible pairs of people (see the notes for why), and that turns out to be enough to push the odds of a match above 50 percent.
+
+Incidentally, if you go up to 43 people — the number of individuals who have served as United States president so far — the odds of a match increase to 92 percent. And indeed two of the presidents do have the same birthday: James Polk and Warren Harding were both born on Nov. 2.
+
+And now… here’s Johnny! On Feb. 6, 1980, about 14 minutes into “The Tonight Show,” Johnny Carson and his sidekick Ed McMahon begin bantering about Ed’s upcoming birthday and famous Americans born in February. Then Johnny changes gears and says, “You know, I’m gonna try something tonight. Now I may get this wrong. I remember this from a long time ago.” He tries to pose the birthday problem, fumbles a bit with the phrasing, and finally comes up with this formulation: “How many people would you think would have to be in a room that your odds would be almost sure that they would have exactly the same birthday on the same day?”
+
+Douglas C. Pizac/Associated Press
+
+Ed guesses 1,000, which suggests he doesn’t understand the question, since 366 people already ensure a match. Johnny shakes his head slightly and says, “Something like 35 or 40.” “That’s all?” Ed interjects, surprised, and Johnny continues, “the odds are pretty good, if I remember.”
+
+You’ve got to appreciate what a bombshell this is, at least in my world: Contrary to the collective memory of the mathematical community, it wasn’t a guest scientist who posed the puzzle that night — it was Johnny himself! Though in retrospect, our mistake was predictable. As with many other false memories and urban legends, our garbled recollection makes more sense than what actually happened. We don’t normally think of Johnny as someone who’d pose a classic math problem and know its surprising answer.
+
+Then comes the next twist: Ed leads Johnny astray. He says, “Pick a day and see if we have it.” Johnny says, “Lady in the front row, what’s your birthday?” “August 9,” she says. “Anyone else here have a birthday on August 9?” asks Johnny. “No?” He looks baffled. “We have 500 people here.” They try someone else’s birthday, April 9, and again there are no matches. Ed acts vindicated and the audience finds the whole thing hilarious.
+
+What went wrong? Johnny did the wrong experiment! By asking for matches specifically to August 9 (or to April 9), he altered the problem. The original problem asked for a match between any two people on any day. A much larger number of people (253, as it turns out) are required for there to be a better than even chance of finding a match to a specific birthday like Aug. 9.
+
+Let me leave you with one last coincidence to ponder. John Adams and Thomas Jefferson died on the same day — the Fourth of July, 1826, exactly 50 years after the adoption of the Declaration of Independence.
+
+Math can’t explain everything.
+
+NOTES
+
+1. After his debacle with the birthday problem on Feb. 6, Johnny Carson tried two more experiments with his studio audience on the following nights. Take a look at these clips from Feb. 7 and Feb. 8 — they contain instructive errors of their own, as well as priceless comedic moments.
+
+2. If you’d like to watch the rest of these or any of the other surviving episodes of “The Tonight Show,” they can be viewed at the Carson archives, but first you’ll need to register for a free account. You can also find dozens of immortal television moments by poking around at the Carson Web site, reviewed in this news feature.
+
+3. For those too young to remember who Johnny Carson was, see the American Masters documentary “Johnny Carson: King of Late Night.” As the PBS Web site notes, Johnny was “seen by more people on more occasions than anyone else in American history. Over the course of 30 years, 4,531 episodes and 23,000 guests, he became a fixture of national life and a part of the zeitgeist. In a 2007 TV Land/Entertainment Weekly poll, Americans voted Carson the greatest icon in the history of television.”
+
+4. The quoted excerpt from “Innumeracy” appears on page 36 of J. A. Paulos, “Innumeracy” (Hill and Wang, 1989). You can find other versions of the same story (many of which have mutated as in the children’s game of “telephone”) by searching the Web or Google Books for “Johnny Carson birthday problem.”
+
+5. The solution of the birthday problem given above contains three standard simplifying assumptions. It assumes there are 365 days in a year (which ignores leap years); all birthdays are equally likely (which ignores daily and seasonal variations in birth rates); and all birthdays are chosen independently (which ignores the possibility of twins or triplets or any other non-random connections that tie people’s birthdays together).
+
+In reality, birth rates are not uniform throughout the year. Furthermore, the pattern of variation is different in different parts of the world. In the United States, for example, daily birth rates rise in the summer and fall in the winter, ranging from about 7 percent above average in September to 5 percent below average in January. Yet the answer to the birthday problem remains 23 even after these seasonal variations are taken into account, as shown in T. S. Nunnikhoven, “A birthday problem solution for nonuniform birth frequencies,” The American Statistician, Vol. 46, No. 4 (Nov., 1992), pp. 270–274 and further discussed in M. C. Borja and J. Haigh, “The birthday problem,” Significance, Vol. 4, No. 3 (September 2007), pp. 124–127, and the references therein.
+
+6. Why are there 253 pairs of people in a group of 23? Because each of the 23 people has 22 possible partners. That makes 23 times 22 = 506 possible ordered pairs, if we always list the partner second. But order is meaningless here; a pair like (Ed, Johnny) is the same as (Johnny, Ed). To avoid such double counting, we take half of 506, which gives 253.
+
+7. Click on the following links for real-world applications of the birthday problem to class phenotype probabilities in medicine (relevant to finding compatible transplant donors and recipients); the legal controversy surrounding the interpretation of partial matches obtained by “all-pairs trawling” of DNA profiles; and the birthday attack in cryptography. The birthday problem has also shed light on coincidences in daily life; see P. Diaconis and F. Mosteller, “Methods for studying coincidences,” Journal of the American Statistical Association, Vol. 84, No. 408 (December 1989) pp. 853–861.
+
+8. Here’s an online simulator that generates random lists of birthdays for groups of different sizes. Playing with it is a great way to get intuition about the birthday problem.
+
+Thanks to Craig Nansen, John Allen Paulos, Bill Peterson and Lauren Seligman for helping me track down the Carson clips; Jeff Sotzing at the Carson Entertainment Group for his generosity in licensing the clips; and Paul Ginsparg, Bobby Kleinberg and Carole Schiffman for their comments and suggestions.

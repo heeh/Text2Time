@@ -1,0 +1,13 @@
+That hackers managed to steal $81 million from the Bangladesh Bank generated headlines because of the size of the heist. But what interested cybersecurity experts was that attackers had taken advantage of a previously unexplored weakness in the bank’s computers by undermining its accounts on Swift, the international money transfer system that banks use to move billions of dollars among themselves each day.
+
+It was an unprecedented form of cyberattack. But since then, the cybersecurity firm Symantec has found the method used against banks in 31 countries.
+
+The malware discovered by Darktrace researchers stopped short of being a full-fledged A.I.-driven piece of software. It did, however, learn while it was in the system, trying to copy the actions of the network in order to blend in.
+
+“What was concerning was that this attack, once it got into the network, used A.I. techniques, like trying to learn the behaviors of employees on the network, to remain undetected for as long as possible,” Ms. Eagan said. She said she saw a future in which countries raced against one another to hire people skilled in developing complex algorithms that could be used to run such malware.
+
+Ms. Eagan’s company, which has headquarters in Cambridge, England, and San Francisco, has increasingly found hacking incidents in India since it expanded there.
+
+As other cybersecurity companies enter Southeast Asia, Africa and other parts of the world where they have not had much presence, they will continue to discover new types of malware being tested in those markets, said Allan Liska, a senior threat intelligence analyst at Recorded Future, a cybersecurity firm based in Somerville, Mass.
+
+“For several years, Taiwan and South Korea have been proven testing grounds for some of the more advanced groups in China,” Mr. Liska said. “Those countries have high-speed internet, widespread internet penetration and not a lot of security infrastructure in place.”
