@@ -1,0 +1,7 @@
+A new version of a malicious computer program known as Nimda is making its way through the world's computer networks, computer security experts said yesterday.
+
+Nimda.E, the latest version of the computer worm, has been detected on computer networks since Monday. The first version, Nimda.A, was spotted on the Internet on Sept. 18.
+
+The New York Times experienced an interruption of Internet service on Tuesday and part of Wednesday that has been attributed to Nimda, said Catherine J. Mathis, a spokeswoman for the company. ''All of our operations have returned to normal,'' she said.
+
+The program is spread primarily through e-mail messages; when a machine on a network is infected, the program searches out and infects servers, the computers that run applications, and causes those machines to flood their own networks with packets of data. That, in turn, slows system performance greatly.
