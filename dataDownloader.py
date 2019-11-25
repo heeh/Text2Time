@@ -1,5 +1,6 @@
 # imports
 import requests
+import json
 import time
 import sys
 from newspaper import Article, ArticleException
@@ -14,19 +15,24 @@ meta_file = open('C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/meta.data',
 file_id = 0
 monthly_cap = 500
 
-# url to grab all articles from January 2019 (2019/1)
-# iterate over all possible dates (1851-2019) (1-12)
+# iterate over all possible dates (1851-2018) (1-12)
 # 1851 changed to 1852 to fix requests error
 for year in range(2019, 1919, -1):
     for month in range(1, 13, 1):
+        if year == 2019 and month == 12 :
+            break  # december 2019 hasn't happened yet
         month_count = 0
         # req_url
         req_url = 'https://api.nytimes.com/svc/archive/v1/' + str(year) + '/' + str(month) + '.json?api-key=' + api_key
 
         # may have to add time.sleep() # sleep to avoid 429 errors
         # requests returns a json object
-        req = requests.get(req_url).json()
-        #time.sleep(1)
+        try:
+            req = requests.get(req_url).json()
+        except json.decoder.JSONDecodeError:
+            print('json.decoder.JSONDecodeError on  url ' + req_url)
+            sys.exit(1)
+        # time.sleep(1)
 
         # catch 'response not found' - not sure what causes this yet
         try:
@@ -65,10 +71,14 @@ for year in range(2019, 1919, -1):
                     # write meta data
                     # we could use the API to add other features to data in the future
                     # this would require a rerun of the downloader
+                    if doc['news_desk']:
+                        category = doc['news_desk'].replace(' ', '').replace('/', '')
+                    else:
+                        category = 'none'
                     meta_data = (str(file_id) + ', '  # id
                                  + str(year) + ', '   # year
                                  + str(month) + ', '  # date
-                                 + doc['news_desk'].replace(' ', '').replace('/', '') + '\n')  # category
+                                 + category + '\n')  # category
                     meta_file.write(meta_data)
 
                     file_id += 1  # increment file id
@@ -78,7 +88,16 @@ for year in range(2019, 1919, -1):
                     print('monthly cap hit. done with month number ', month)
                     break
 
-                print(str(month_count / monthly_cap) + ' done with month ' + str(month) + ', year ' + str(year))
+                if monthly_cap:
+                    print(str(month_count / monthly_cap)
+                          + ' done with month '
+                          + str(month) + ', year '
+                          + str(year))
+                else:
+                    print(str(month_count / len(req['response']['docs']))
+                          + ' done with month '
+                          + str(month)
+                          + ', year ' + str(year))
         except KeyError:
             pass
         print('done with month', month)
