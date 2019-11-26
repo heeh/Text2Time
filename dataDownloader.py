@@ -19,10 +19,10 @@ monthly_cap = 500
 # 1851 changed to 1852 to fix requests error
 for year in range(2019, 1919, -1):
     for month in range(1, 13, 1):
-        if year == 2019 and month == 12 :
+        if year == 2019 and month == 12:
             break  # december 2019 hasn't happened yet
+
         month_count = 0
-        # req_url
         req_url = 'https://api.nytimes.com/svc/archive/v1/' + str(year) + '/' + str(month) + '.json?api-key=' + api_key
 
         # may have to add time.sleep() # sleep to avoid 429 errors
@@ -49,6 +49,7 @@ for year in range(2019, 1919, -1):
                     article.parse()
                     passed = True
                 except ArticleException:
+                    print('article exception')
                     pass
 
                 # BUG: the same article is being printed every time?
@@ -65,6 +66,7 @@ for year in range(2019, 1919, -1):
 
                     except UnicodeEncodeError:
                         # we'll just skip over unicode errors for now
+                        print('unicode error')
                         pass
                     f.close()
 
@@ -75,6 +77,7 @@ for year in range(2019, 1919, -1):
                         category = doc['news_desk'].replace(' ', '').replace('/', '')
                     else:
                         category = 'none'
+
                     meta_data = (str(file_id) + ', '  # id
                                  + str(year) + ', '   # year
                                  + str(month) + ', '  # date
