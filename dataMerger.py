@@ -2,6 +2,7 @@ import os.path
 
 
 def transfer_files_from(start_date, dir_start, dir_end):
+    # globals
     global project_path
     global global_id
     global meta_final
@@ -20,31 +21,39 @@ def transfer_files_from(start_date, dir_start, dir_end):
                     + '/meta' + str(dir_start) + 'to' + str(dir_end)
                     + '.data', 'r')
 
-    # write all files from start_date to end_date
+    # copy all files corresponding to current meta into final data directory
     for cur_line in cur_meta:
-        # grab id and year from 1983 to 1988 meta data
+        # grab id and year from current meta
         line_data = cur_line.strip().split(',')
         cur_id = int(line_data[0])
         cur_year = int(line_data[1])
 
+        # declare final file name with global id
         final_f_name = project_path + 'dataset1960to2019/data/' + str(global_id) + '.data'
         if debug:
             file_exists = os.path.isfile(final_f_name)  # only write new file if file does not already exist
         else:
             file_exists = False  # always write new file if not debugging
 
-        if start_date <= cur_year and file_exists:
-            # copy meta data as well as corresponding file
+        if start_date <= cur_year and not file_exists:
+            # write global meta data to final meta file
             line_data[0] = str(global_id)
             meta_final.write(', '.join(line_data))
+
+            # open up final file with global id (declared above)
             final_f = open(final_f_name, 'w+', encoding='utf8')
+
+            # grab file corresponding to current id
             old_f = open(project_path + 'dataset'
                          + str(dir_start) + 'to' + str(dir_end) + '/data/'
                          + str(cur_id) + '.data', 'r+', encoding='utf8')
+
+            # write old_f to final_file with global id
             final_f.write(old_f.read())
+
             final_f.close()
             old_f.close()
-        elif cur_year < start_date:
+        elif cur_year < start_date:  # only used in 85-88 overlap
             break
 
         # increment global id
