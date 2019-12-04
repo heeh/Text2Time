@@ -75,6 +75,12 @@ meta_final = open(project_path + 'dataset1960to2019/meta1960to2019.data', 'w+')
 global_id = 0
 debug = False
 
+# method calls assume that data directories all follow these rules:
+# - outter data directory name is "dataset[start_date]to[end_date]
+# - sit in same directory as this script
+# - actual data files sit in inner directory called "data"
+# - meta files are named "meta[start_date]to[end_date].data"
+# - meta files sit in outter data directory
 transfer_files_from(1988, 1985, 2019)  # '88 to '19
 transfer_files_from(1983, 1983, 1988)  # '83 to '88
 transfer_files_from(1975, 1975, 1982)  # '75 to '82
