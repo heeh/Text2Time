@@ -1,7 +1,5 @@
-# convert .data files to .tsv files
+# convert .data files to .csv files
 # assumes we have raw .data files in local directory
-
-#
 
 # convert
 # loop over meta data and grab four columns for tsv file
@@ -12,12 +10,11 @@ t_list = []
 for row in m:
     columns = row.split(',')
     ID = columns[0]
-    label = columns[1][2]
-    alpha = 'a'
+    label = columns[1].lstrip()[2]
     raw_f = open(data_dir + ID + '.data', 'r', encoding='utf8')
     text = raw_f.read()
     raw_f.close()
-    s = label + ',' + text.replace('\n', '').replace(',', '') + '\n '
+    s = label + ',' + text.replace('\n', '').replace(',', '') + '\n'
     t_list.append(s)
 m.close()
 
