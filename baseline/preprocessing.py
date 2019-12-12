@@ -1,15 +1,29 @@
+import sys
 import pandas as pd
 from random import shuffle
 from shutil import copyfile
 
-def split_dataset():
 
-    meta = pd.read_csv(open('dataset/meta.data'), sep=', ')
+SOURCE_DIR = 'big/'
+META_DIR = 'big/meta.csv'
+TRAIN_DIR ='big_train/'
+TEST_DIR = 'big_test/'
+
+#SOURCE_DIR = 'dataset/'
+#META_DIR = 'dataset/meta.csv'
+#TRAIN_DIR ='train_sample/'
+#TEST_DIR = 'test_sample/'
+
+
+
+def split_dataset():
+    meta = pd.read_csv(open(META_DIR), sep=",  ")
 
     id = meta['ID']
     year = meta['Year']
     month = meta['Month']
 
+    
     curr_year = year[0]
     curr_month = month[0]
 
@@ -37,10 +51,13 @@ def split_dataset():
         train_ids += curr_batch[:num_train]
         test_ids += curr_batch[num_train:]
 
+    print("started copying data from"  + SOURCE_DIR+ "to" + TRAIN_DIR)
     for id in train_ids:
-        copyfile('dataset/'+str(id)+'.data', 'text2time_train/'+str(id)+'.data')
-
+        copyfile(SOURCE_DIR+str(id)+'.data', TRAIN_DIR +str(id)+'.data')
+    print("Finished copying data from"  + SOURCE_DIR+ "to" + TRAIN_DIR)
+    
+    print("started copying data from"  + SOURCE_DIR+ "to" + TEST_DIR)
     for id in test_ids:
-        copyfile('dataset/'+str(id)+'.data', 'text2time_test/'+str(id)+'.data')
-
+        copyfile(SOURCE_DIR+str(id)+'.data', TEST_DIR+str(id)+'.data')
+    print("Finished copying data from"  + SOURCE_DIR+ "to" + TEST_DIR)
 split_dataset()
