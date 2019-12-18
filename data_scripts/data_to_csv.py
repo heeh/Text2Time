@@ -1,5 +1,6 @@
 import os
 
+
 # convert multiple .data files into one csv file
 # assumes we have raw .data files in local directory
 def convert_to_csv(data_dir, write_to, split_type='all', debug_print=False):
@@ -28,7 +29,7 @@ def convert_to_csv(data_dir, write_to, split_type='all', debug_print=False):
             if category is not None and category not in t_dict.keys():
                 t_dict[category] = []
 
-        raw_f = open(data_dir + '/data/' + ID + '.data', 'r', encoding='utf8')
+        raw_f = open(data_dir + '/data/' + ID + '.data', 'r', encoding='utf8', errors='ignore')
         text = raw_f.read()
         raw_f.close()
         s = label + ',' + text.replace('\n', '').replace(',', '') + '\n'
@@ -109,7 +110,7 @@ def convert_to_csv(data_dir, write_to, split_type='all', debug_print=False):
         cat_file.close()
 
 
-full_data = 'C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/all_data/dataset1960to2019/'
+full_data = 'C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/all_data/fullDataClean/'
 cat_data = 'C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/all_data/datasetByCategories/'
 
 convert_to_csv(data_dir=full_data, write_to=cat_data, split_type='categories', debug_print=True)
