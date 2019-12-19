@@ -53,10 +53,12 @@ def average_length_of_lines(filename):
     return word_sum / line_count
 
 
-full_data_dir = 'C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/all_data/dataset1960to2019/'
+full_data_dir = 'C:/Users/Chase\'s Laptop/PycharmProjects/Text2Time/all_data/fullDataClean/'
 
 avg_line_len = average_length_of_lines(filename=full_data_dir + 'train.csv')
 
 print(avg_line_len)
 
 truncate_f_to_len(f_to_trunc=full_data_dir, trunc_len=int(avg_line_len))
+
+print(average_length_of_lines(filename=full_data_dir + 'train_truncated.csv'))
